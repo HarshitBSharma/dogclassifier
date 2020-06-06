@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="selfcustomized">
+    <div class="main-title pt-4 pb-3">
+        <span>WELCOME TO THE DOG CLASSIFIER!</span>
+    </div>
+    <div class="container">
+        <span>Ever saw a picture of a dog and forgot which breed it is? </span>
+        <span class="mb-5">Don't worry, just upload the picture below
+                and we'll try to predict which breed it belongs to!</span>
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{form.hidden_tag() }}
+            <fieldset class="form-group">
+            <div class="form-group pr-auto pl-auto">
+                {{ form.picture.label(class="pr-auto pl-auto") }}
+                <div class="btn btn-outline-info">
+                {{ form.picture(class="form-control-file pr-auto pl-auto") }}
+                </div>
+                {% if form.picture.errors %}
+                    {% for error in form.picture.errors %}
+                        <span class="text-danger">{{ error }}</span><br>
+                    {%  endfor %}
+                {% endif %}
+            </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-danger") }}
+            </div>
+        </form>
+        <div>
+            <span class="answer">{{breed}}</span>
+        </div>
+        {% if breed %}
+            <img src={{ url_for('static', filename="images/"+f_name) }}  alt="Your Image will appear here">
+        {% endif %}
+        <div class="contact">
+            <a href="https://www.linkedin.com/in/harshit-sharma-91a83a124/">
+                <span class="text-muted mt-5">Find me on Linkedin!</span>
+                <img src={{ url_for('static', filename="images/logo.png") }}>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

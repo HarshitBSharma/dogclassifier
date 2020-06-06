@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html,body{
+    height: 150%
+}
+
+.selfcustomized{
+    text-align: center;
+    background: #D79922;
+    height: 100%;
+}
+
+.main-title{
+
+    text-align: center;
+}
+
+.main-title span{
+    color: #4056A1;
+    font-family: monospace !important;
+    font-weight: 900;
+    font-size: 3.5em;
+    text-align: center;
+    display: inline;
+    letter-spacing: 0.05em;
+}
+
+
+.container span{
+    display: block;
+    color: #EFEB2A;
+    font-size: 1.6em;
+    text-align: center;
+}
+
+.answer{
+    color: #4056A1 !important;
+    font-size: 1.8em !important;
+    font-weight: 500;
+}
+
+
+.contact img{
+    position: absolute;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.text-muted{
+    text-align: center;
+    font-size: 0.9em;
+}
